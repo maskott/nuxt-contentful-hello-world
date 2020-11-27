@@ -1,0 +1,1 @@
+# nuxt-contentful-hello-world

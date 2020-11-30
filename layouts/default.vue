@@ -4,9 +4,9 @@
     <nav>
       <ul>
         <li>
-          <nuxt-link to="/">
+          <NuxtLink to="/">
             Home
-          </nuxt-link>
+          </NuxtLink>
         </li>
       </ul>
     </nav>

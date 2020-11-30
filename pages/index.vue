@@ -16,9 +16,9 @@
         <ul>
             <li v-for="(p, i) in posts" :key="i">
                 <h3>
-                    <nuxt-link :to="'/posts/' + p.fields.slug">
+                    <NuxtLink :to="'/posts/' + p.fields.slug">
                         {{ p.fields.title }}
-                    </nuxt-link>
+                    </NuxtLink>
                 </h3>
             </li>
         </ul>

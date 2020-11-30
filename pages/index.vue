@@ -4,7 +4,7 @@
         <ul>
             <li v-for="(l, i) in links" :key="i">
                 <h3>
-                    <a href="l.fields.url" target="_blank">
+                    <a :href="l.fields.url" target="_blank">
                         {{ l.fields.title }}
                     </a>
                 </h3>

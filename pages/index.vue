@@ -23,6 +23,8 @@
             </li>
         </ul>
 
+        <hr />
+
         <LangSwitcher />
 
     </div>

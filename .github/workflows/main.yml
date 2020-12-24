@@ -1,16 +1,16 @@
 name: Level Geese
 
-on: push
+on: [push]
 
 jobs:
-  my-job:
-    name: My job
+  build:
     runs-on: ubuntu-latest
+    name: Deploying to surge
     steps:
-      - name: Deploy to level-geese.surge.sh
-        uses: dswistowski/surge-sh-action@v1
+      - uses: actions/checkout@v1
+      - name: Install surge and fire deployment
+        uses: actions/setup-node@v1
         with:
-          domain: 'level-geese.surge.sh'
-          project: '.'
-          login: ${{ secrets.surge_login }}
-          token: ${{ secrets.surge_token }}
+          node-version: 8
+      - run: npm install -g surge
+      - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}

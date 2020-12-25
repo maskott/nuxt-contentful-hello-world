@@ -3,6 +3,7 @@ export default {
     components: true,
     modules: [
         'nuxt-i18n',
+        'bootstrap-vue/nuxt',
     ],
     i18n: {
         locales: [

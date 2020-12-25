@@ -10,7 +10,6 @@
   "dependencies": {
     "contentful": "^8.1.5",
     "contentful-rich-text-vue-renderer": "^1.1.5",
-    "fs": "0.0.1-security",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.16.0"
   }

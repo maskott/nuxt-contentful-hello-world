@@ -1,5 +1,6 @@
 {
   "name": "nuxt-contentful-hello-world",
+  "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -7,11 +8,10 @@
     "start": "nuxt start"
   },
   "dependencies": {
-    "@nuxtjs/dotenv": "^1.4.1",
-    "contentful": "^7.15.0",
+    "contentful": "^8.1.5",
     "contentful-rich-text-vue-renderer": "^1.1.5",
     "fs": "0.0.1-security",
-    "nuxt": "^2.14.7",
+    "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.16.0"
   }
 }

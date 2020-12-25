@@ -9,10 +9,10 @@ jobs:
   deploy:
 
     env:
-      CTF_SPACE_ID: ${{secrets.CTF_SPACE_ID}}
-      CTF_CD_ACCESS_TOKEN: ${{secrets.CTF_CD_ACCESS_TOKEN}}
+      CTF_SPACE_ID: ${{ secrets.CTF_SPACE_ID }}
+      CTF_CD_ACCESS_TOKEN: ${{ secrets.CTF_CD_ACCESS_TOKEN }}
       NODE_ENV: 'production'
-      
+
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
@@ -45,4 +45,4 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g surge
-      - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - run: surge ./dist ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}

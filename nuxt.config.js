@@ -2,7 +2,6 @@ export default {
     target: 'static',
     components: true,
     modules: [
-        '@nuxtjs/dotenv',
         'nuxt-i18n',
     ],
     i18n: {

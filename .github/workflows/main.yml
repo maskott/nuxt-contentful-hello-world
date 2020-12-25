@@ -46,4 +46,5 @@ jobs:
           node-version: '14'
       - run: npm install -g surge
       - run: cd main/dist
+      - run: ls -lah
       - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}

@@ -17,10 +17,6 @@ export default {
         ],
         defaultLocale: 'en',
     },
-    // env: {
-    //     CTF_SPACE_ID: process.env.CTF_SPACE_ID,
-    //     CTF_CD_ACCESS_TOKEN: process.env.CTF_CD_ACCESS_TOKEN,
-    // },
     build: {
         extend (config, { isDev, isClient }) {
             config.node = {

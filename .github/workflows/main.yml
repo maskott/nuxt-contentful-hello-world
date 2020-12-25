@@ -9,12 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main
 
       - name: Setup Node
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v2-beta
         with:
-          node-version: '14.x'
+          node-version: '14'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -24,13 +27,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
-      - run: npm test
-      - run: npm run generate
+      - name: Build/Generate
+        run: |
+          cd main
+          yarn install
+          yarn generate
+
 
       - name: Install surge and fire off deployment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
-          node-version: 8
+          node-version: '14'
       - run: npm install -g surge
       - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}

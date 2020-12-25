@@ -4,11 +4,11 @@
             v-for="locale in availableLocales"
             :key="locale.code"
         >
-            <nuxt-link :to="switchLocalePath(locale.code)" v-if="locale.code != currentLocale">
-              {{ locale.name }}
+            <nuxt-link :to="switchLocalePath(locale.code)" v-if="locale.code != currentLocale" :title="locale.name">
+              {{ locale.code }}
             </nuxt-link>
-            <strong v-else>
-              {{ locale.name }}
+            <strong v-else :title="locale.name">
+              {{ locale.code }}
             </strong>
         </li>
     </ul>

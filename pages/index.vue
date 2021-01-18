@@ -4,11 +4,11 @@
         <ul>
             <li v-for="(l, i) in links" :key="i">
                 <h3>
-                    <a :href="l.fields.url.en" target="_blank">
-                        {{ l.fields.title[lang] }}
+                    <a :href="l.fields.url" target="_blank">
+                        {{ l.fields.title }}
                     </a>
                 </h3>
-                <p>{{ l.fields.description[lang] }}</p>
+                <p>{{ l.fields.description }}</p>
             </li>
         </ul>
 
@@ -16,8 +16,8 @@
         <ul>
             <li v-for="(p, i) in posts" :key="i">
                 <h3>
-                    <NuxtLink :to="localePath('/posts/' + p.fields.slug.en)">
-                        {{ p.fields.title[lang] }}
+                    <NuxtLink :to="localePath('/posts/' + p.fields.slug)">
+                        {{ p.fields.title }}
                     </NuxtLink>
                 </h3>
             </li>
@@ -34,15 +34,15 @@
 import client from '~/plugins/contentful.js'
 
 export default {
-    asyncData({env}) {
+    asyncData({app}) {
         return Promise.all([
             client.getEntries({
                 'content_type': 'links',
-                'locale': '*'
+                'locale': app.i18n.locale
             }),
             client.getEntries({
                 'content_type': 'post',
-                'locale': '*'
+                'locale': app.i18n.locale
             }),
         ]).then(([links, posts]) => {
             return {
@@ -50,11 +50,6 @@ export default {
                 posts: posts.items
             }
         }).catch(console.error)
-    },
-    data() {
-        return {
-            lang: this.$i18n.locale
-        }
     },
 }
 </script>

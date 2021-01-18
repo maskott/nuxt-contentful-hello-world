@@ -10,16 +10,19 @@ export default {
             {
                 code: 'en',
                 name: 'English'
-              },
-              {
+            },
+            {
                 code: 'es',
                 name: 'Español'
-              }
+            },
         ],
         defaultLocale: 'en',
     },
     env: {
         CTF_SPACE_ID: process.env.CTF_SPACE_ID,
         CTF_CD_ACCESS_TOKEN: process.env.CTF_CD_ACCESS_TOKEN,
+    },
+    bootstrapVue: {
+        icons: true
     },
 }

@@ -23,10 +23,6 @@
             </li>
         </ul>
 
-        <hr />
-
-        <LangSwitcher />
-
     </div>
 </template>
 

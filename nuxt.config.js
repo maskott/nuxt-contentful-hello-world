@@ -17,6 +17,7 @@ export default {
             },
         ],
         defaultLocale: 'en',
+        vueI18nLoader: true,
     },
     env: {
         CTF_SPACE_ID: process.env.CTF_SPACE_ID,

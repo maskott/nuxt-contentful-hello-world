@@ -1,12 +1,21 @@
+<i18n lang="yaml">
+en:
+  language: "Language"
+  selected: "Selected language"
+es:
+  language: "Idioma"
+  selected: "Idioma seleccionado"
+</i18n>
+
 <template>
     <b-dropdown 
-      variant="outline-info"
+      variant="outline-light"
       size="sm"
-      :title="'Selected language: ' + currentLocaleName"
+      :title="$t('selected') + ': ' + currentLocaleName"
     >
       <template #button-content>
         <b-icon icon="globe"></b-icon> 
-        <span class="text-uppercase">{{ currentLocale }}</span>
+        {{ $t('language') }}
       </template>
       <b-dropdown-item
         v-for="(loc, i) in allLocales"
@@ -17,7 +26,6 @@
         <b-icon :icon="loc.code == currentLocale ? 'check-circle-fill' : 'circle'" aria-hidden="true"></b-icon>
         {{ loc.name }}
       </b-dropdown-item>
-
     </b-dropdown>
 </template>
 

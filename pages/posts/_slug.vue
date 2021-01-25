@@ -1,11 +1,14 @@
 <template>
-    <div class="post">
-        <h2>
-            {{ post.fields.title[lang] }}
-        </h2>
-        <rtr :document="post.fields.body[lang]" />
-        <hr />
-        <LangSwitcher />
+    <div>
+        <b-container class="post">
+            <h2>
+                {{ post.fields.title[lang] }}
+            </h2>
+            <rtr :document="post.fields.body[lang]" />
+            <hr />
+            <LangSwitcher />
+        </b-container>
+        <SideBar :posts="posts"></SideBar>
     </div>
 </template>
 
@@ -17,16 +20,21 @@ export default {
     components: {
         rtr: richTextRenderer,
     },
-    asyncData({env, params}) {
+    asyncData({app, env, params}) {
         return Promise.all([
             client.getEntries({
                 'content_type': 'post',
                 'fields.slug': params.slug,
                 'locale': '*'
             }),
-        ]).then((response) => {
+            client.getEntries({
+                'content_type': 'post',
+                'locale': app.i18n.locale
+            }),
+        ]).then(([post, posts]) => {
             return {
-                post: response[0].items[0]
+                post: post.items[0],
+                posts: posts.items
             }
         }).catch(console.error)
     },

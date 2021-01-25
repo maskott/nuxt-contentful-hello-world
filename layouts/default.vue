@@ -1,17 +1,16 @@
 <i18n lang="yaml">
 en:
-  hello: "Hello world!"
+  hello: "Hello World!"
 es:
   hello: "¡Hola Mundo!"
 </i18n>
 
 <template>
   <div>
-    <b-navbar type="dark" variant="info">
+    <b-navbar type="dark" variant="info" fixed="top">
 
       <b-navbar-brand :to="localePath('/')">
-        <b-icon icon="box-seam"></b-icon>
-        {{ $t('hello') }}
+        <b-icon icon="box-seam"></b-icon>{{ $t('hello') }}
       </b-navbar-brand>
       
       <b-navbar-nav class="ml-auto">
@@ -26,9 +25,15 @@ es:
       </b-navbar-nav>
 
     </b-navbar>
-    <Nuxt />
-    <b-navbar type="dark" variant="info">
-      <LangSwitcher />
+    <div class="main-content my-3">
+      <Nuxt />
+    </div>
+    <b-navbar type="dark" variant="info" fixed="bottom">
+      <b-navbar-nav class="mx-auto">
+        <b-nav-item>
+          <LangSwitcher />
+        </b-nav-item>
+      </b-navbar-nav>
     </b-navbar>
     <b-sidebar id="sidebar-1" title="Sidebar" shadow>
       <div class="px-3 py-2">
@@ -42,8 +47,9 @@ es:
   </div>
 </template>
 
-<style>
-  body {
-    padding: 1rem;
-  }
+<style lang="scss" scoped>
+.main-content {
+  position: relative;
+  top: 4rem;
+}
 </style>

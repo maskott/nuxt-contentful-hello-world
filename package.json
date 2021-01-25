@@ -11,7 +11,9 @@
     "bootstrap-vue": "^2.21.1",
     "contentful": "^8.1.5",
     "contentful-rich-text-vue-renderer": "^1.1.5",
+    "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",
-    "nuxt-i18n": "^6.17.0"
+    "nuxt-i18n": "^6.17.0",
+    "sass-loader": "^10.1.1"
   }
 }

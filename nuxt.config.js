@@ -26,4 +26,5 @@ export default {
     bootstrapVue: {
         icons: true
     },
+    css: [ '~/assets/styles/main.scss' ],
 }

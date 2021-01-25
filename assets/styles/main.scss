@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'fonts';
+
+body {
+  font-family: $font-family-base;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: $font-family-heading;
+
+  .b-icon.bi {
+    vertical-align: 0.1rem;
+    margin-right: 1rem;
+  }
+}

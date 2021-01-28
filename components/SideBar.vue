@@ -21,8 +21,8 @@ es:
       <ul>
           <li v-for="(p, i) in posts" :key="i">
               <strong>
-                  <NuxtLink :to="localePath('/posts/' + p.slug)">
-                      {{ p.title }}
+                  <NuxtLink :to="localePath('/posts/' + p.fields.slug)">
+                      {{ p.fields.title }}
                   </NuxtLink>
               </strong>
           </li>

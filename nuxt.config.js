@@ -24,7 +24,10 @@ export default {
         CTF_CD_ACCESS_TOKEN: process.env.CTF_CD_ACCESS_TOKEN,
     },
     bootstrapVue: {
-        icons: true
+        icons: true,
+    },
+    build: {
+        cssSourceMap: false,
     },
     css: [ '~/assets/styles/main.scss' ],
 }

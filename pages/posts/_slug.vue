@@ -34,7 +34,7 @@ export default {
         ]).then(([post, posts]) => {
             return {
                 post: post.items[0].fields,
-                posts: posts.items.fields
+                posts: posts.items
             }
         }).catch(console.error)
     },

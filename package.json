@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.21.1",
-    "contentful": "^8.1.5",
+    "contentful": "^8.1.6",
     "contentful-rich-text-vue-renderer": "^1.1.5",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",

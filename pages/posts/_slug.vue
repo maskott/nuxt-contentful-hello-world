@@ -2,9 +2,9 @@
     <div>
         <b-container class="post">
             <h2>
-                {{ post.fields.title[lang] }}
+                {{ post.title }}
             </h2>
-            <rtr :document="post.fields.body[lang]" />
+            <rtr :document="post.body" />
             <hr />
             <LangSwitcher />
         </b-container>
@@ -25,7 +25,7 @@ export default {
             client.getEntries({
                 'content_type': 'post',
                 'fields.slug': params.slug,
-                'locale': '*'
+                'locale': app.i18n.locale
             }),
             client.getEntries({
                 'content_type': 'post',
@@ -33,15 +33,10 @@ export default {
             }),
         ]).then(([post, posts]) => {
             return {
-                post: post.items[0],
-                posts: posts.items
+                post: post.items[0].fields,
+                posts: posts.items.fields
             }
         }).catch(console.error)
-    },
-    data() {
-        return {
-            lang: this.$i18n.locale
-        }
     },
 }
 </script>

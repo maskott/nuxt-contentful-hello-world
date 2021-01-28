@@ -13,7 +13,7 @@ es:
             <b-row>
                 <b-col>
                     <h1><b-icon icon="house"></b-icon>Hello Repo</h1>
-                    <p>Welcome to the test site!</p>
+                    <p>Welcome to the test site! Stand back while I trigger a build.</p>
                 </b-col>
             </b-row>
             <b-row>

@@ -43,4 +43,7 @@ es:
   position: relative;
   top: 4rem;
 }
+.navbar {
+  max-height: 3.9375rem;
+}
 </style>

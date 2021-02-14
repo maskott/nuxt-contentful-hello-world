@@ -2,15 +2,17 @@
   "name": "nuxt-contentful-hello-world",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "yarn image-download && nuxt",
+    "build": "yarn image-download && nuxt build",
     "generate": "nuxt generate",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "image-download": "node ./scripts/contentful-image-assets.js"
   },
   "dependencies": {
     "bootstrap-vue": "^2.21.1",
     "contentful": "^8.1.6",
     "contentful-rich-text-vue-renderer": "^1.1.5",
+    "dotenv": "^8.2.0",
     "node-sass": "^5.0.0",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.17.0",
